@@ -1,0 +1,53 @@
+#include<stdio.h>
+int main()
+{
+	long long int n,i,ara[4000],p,flag,ara1[4000],c,j,temp,q;
+	while(scanf("%lld",&n)==1)
+	{
+		flag=0;
+		c=0;
+		for(i=0;i<n;i++)
+		{
+			scanf("%lld",&ara[i]);
+		}
+		for(i=0;i<n-1;i++)
+		{
+			p=abs(ara[i+1]-ara[i]);
+			ara1[i]=p;
+			c++;
+		}
+		for(i=0;i<c;i++)
+		{
+			for(j=i+1;j<c;j++)
+			{
+				if(ara1[i]>=ara1[j])
+				{
+					temp=ara1[i];
+					ara1[i]=ara1[j];
+					ara1[j]=temp;
+				}
+			}
+		}
+		for(i=0;i<c;i++)
+		{
+			if(ara1[i]==i+1)
+			{
+				flag=0;
+			}
+			else
+			{
+				flag=1;
+				break;
+			}
+		}
+		if(flag==1)
+		{
+			printf("Not jolly\n");
+		}
+		else
+		{
+			printf("Jolly\n");
+		}
+	}
+	return 0;
+}

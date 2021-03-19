@@ -1,0 +1,61 @@
+#include<stdio.h>
+int main()
+{
+	long long int n,i,j,r,p,q,ans,x,flag=0;
+	while(scanf("%lld",&n)==1)
+	{
+		r=0;
+		x=n;
+		if(n==2)
+		{
+			printf("4\n");
+			break;
+		}
+		else
+		{
+	for(i=1;i;i++)
+		{
+			p=n%10;
+			q=n/10;
+			r=r*10+p;
+			n=q;
+			if(q==0)
+			{
+				break;
+			}
+		}
+		if(r==x)
+		{
+			for(j=2;j<r;j++)
+			{
+				if(r%j==0)
+				{
+					flag=1;
+					break;
+				}
+				else
+				{
+					flag=0;
+				}
+			}
+			if(flag==0)
+			{
+				ans=r*2;
+				printf("%lld\n",ans);
+				break;
+			}
+			else
+			{
+				ans=r*2;
+				printf("%lld\n",ans);
+			}
+		}
+		else
+		{
+			ans=x*2;
+			printf("%lld\n",ans);
+		}
+	}
+	}
+	return 0;
+}

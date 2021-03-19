@@ -1,0 +1,48 @@
+#include<stdio.h>
+int main()
+{
+	int h,m,t,i,p,q;
+	scanf("%d",&t);
+	i=1;
+	while(i<=t)
+	{
+		scanf("%d:%d",&h,&m);
+		p=11-h;
+		q=60-m;
+		if(p<0)
+		{
+			p=p+12;
+		}
+		if(p==0)
+		{
+			p=12;
+		}
+		if(q==60&&p!=0)
+		{
+			p=p+1;
+			q=0;
+		}
+		if(p>12)
+        {
+            p=p-12;
+        }
+		if(p<10)
+		{
+			printf("0%d:",p);
+		}
+		else
+		{
+			printf("%d:",p);
+		}
+		if(q<10)
+		{
+			printf("0%d\n",q);
+		}
+		else
+		{
+			printf("%d\n",q);
+		}
+		i++;
+	}
+	return 0;
+}

@@ -1,0 +1,51 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+long long int a1[200000],a2[2000000],i,m,p,a,b,j,temp,c,v,q,n;
+int main()
+{
+	while(scanf("%lld",&n)==1)
+	{
+		m=0;
+		a=0;
+		b=0;
+		for(i=1;i;i++)
+		{
+			p=n%10;
+			q=n/10;
+			n=q;
+			a1[m]=p;
+			m++;
+			if(q==0)
+			{
+				break;
+			}
+		}
+		sort(a1,a1+m);
+		for(i=0;i<m;i++)
+		{
+			a2[i]=a1[m-i-1];
+		}
+		if(a1[0]==0)
+		{
+			for(j=0;j<m;j++)
+			{
+				if(a1[j]!=0)
+				{
+					temp=a1[j];
+					a1[j]=a1[0];
+					a1[0]=temp;
+					break;
+				}
+			}
+		}
+		for(i=0;i<m;i++)
+		{
+			a=a*10+a1[i];
+			b=b*10+a2[i];
+		}
+		c=b-a;
+		v=c/9;
+		printf("%lld - %lld = %lld = 9 * %lld\n",b,a,c,v);
+	}
+}

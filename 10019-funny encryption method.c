@@ -1,0 +1,58 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	long long int t,k,a,b,n,p,q,r,s,i,j,c,ct,h,x;
+	scanf("%lld",&t);
+	k=1;
+	while(k<=t)
+	{
+		s=0;
+		c=0;
+		ct=0;
+		scanf("%lld",&n);
+		x=n;
+		for(i=1;i;i++)
+		{
+			p=n%2;
+			q=n/2;
+			n=q;
+			if(p==1)
+			{
+				c++;
+			}
+			if(q==0)
+			{
+				break;
+			}
+		}
+		for(i=1;i;i++)
+		{
+			a=x%10;
+			b=x/10;
+			x=b;
+			s=s+(a*(pow(16,i-1)));
+			if(b==0)
+			{
+				break;
+			}
+		}
+		for(i=1;i;i++)
+		{
+			r=s%2;
+			j=s/2;
+			s=j;
+			if(r==1)
+			{
+				ct++;
+			}
+			if(j==0)
+			{
+				break;
+			}
+		}
+		printf("%lld %lld\n",c,ct);
+		k++;
+	}
+	return 0;
+}

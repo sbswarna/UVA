@@ -1,0 +1,63 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	long long int t,m,s2,s1,i,k,sum,q,r,p,j,l;
+	char s[25],c,a[25];
+	scanf("%lld",&t);
+	m=1;
+	while(m<=t)
+	{
+		k=0;
+		gets(s);
+		l=strlen(s);
+		if(l==0)
+		{
+			continue;
+		}
+		else
+		{
+		
+		s1=0;
+		s2=0;
+		for(i=0;i<l;i++)
+		{
+			if(s[i]>='0'&&s[i]<='9')
+			{
+				a[k]=s[i];
+				k++;
+			}
+		}
+		for(i=k-2;i>=0;i=i-2)
+		{
+			p=(a[i]-48)*2;
+			for(j=1;j;j++)
+			{
+				q=p%10;
+				r=p/10;
+				p=r;
+				s2=s2+q;
+				if(r==0)
+				{
+					break;
+				}
+			}
+		}
+		for(i=k-1;i>=1;i=i-2)
+		{
+			s1=s1+(a[i]-48);
+		}
+		sum=s1+s2;
+		if(sum%10==0)
+		{
+			printf("Valid\n");
+		}
+		else
+		{
+			printf("Invalid\n");
+		}
+	}
+		m++;
+	}
+	return 0;
+}

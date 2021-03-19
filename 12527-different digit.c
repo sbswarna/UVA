@@ -1,0 +1,47 @@
+#include<stdio.h>
+int main()
+{
+	long long int a[550],i,j,m,n,p,q,l,x,flag,c,k;
+	while(scanf("%lld%lld",&m,&n)==2)
+	{
+		c=0;
+		flag=0;
+		for(i=m;i<=n;i++)
+		{
+			x=i;
+			l=0;
+			while(x!=0)
+			{
+				p=x%10;
+				x=x/10;
+				a[l]=p;
+				l++;
+			}
+			for(j=0;j<l;j++)
+			{
+				for(k=j+1;k<l;k++)
+				{
+				if(a[j]!=a[k])
+				{
+					flag=0;
+				}
+				else
+				{
+					flag=1;
+					break;
+				}
+			}
+			if(flag==1)
+			{
+				break;
+			}
+		}
+			if(flag==0)
+			{
+				c++;
+			}
+		}
+		printf("%lld\n",c);
+	}
+	return 0;
+}
